@@ -38,6 +38,7 @@ func main() {
 	r.HandleFunc("/", home)
 	r.HandleFunc("/contact", contact)
 	r.HandleFunc("/faqs", faqs)
+	r.NotFoundHandler = http.HandlerFunc(notFound)
 	//http.ListenAndServe(":3000", nil)
 	//Router is passed in here instead of nil.
 	http.ListenAndServe(":3000", r)

@@ -20,8 +20,8 @@ func contact(w http.ResponseWriter, r *http.Request) {
 
 func faqs(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	fmt.Fprint(w, "<h2>This is the FAQs page, please view "+
-	"the questions answered below and let us know via email if you have additional.</h2>")
+	fmt.Fprint(w, "<h2>This is the FAQs page, please view"+
+	"the questions presented below and let us know via email if you have additional</h2>")
 }
 
 func notFound(w http.ResponseWriter, r *http.Request) {

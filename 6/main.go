@@ -9,6 +9,7 @@ import (
 )
 
 var homeTemplate *template.Template
+var contactTemplate *template.Template
 
 
 func main() {
@@ -18,6 +19,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	contactTemplate, err = template.ParseFiles("views/contact.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)

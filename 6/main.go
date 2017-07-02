@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 
@@ -21,6 +20,9 @@ func main() {
 	}
 
 	contactTemplate, err = template.ParseFiles("views/contact.gohtml")
+	if err != nil {
+		panic(err)
+	}
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
@@ -35,7 +37,5 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 func contact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	fmt.Fprint(w, "To get in touch, please send an email " +
-	"to <a href=\"mailto:support@usegolang.com\">" +
-	"support@usegolang.com</a>.")
+	contactTemplate.Execute(w, nil)
 }

@@ -42,5 +42,5 @@ func main() {
 	router.GET("/hello/:name", Hello)
 	//http.ListenAndServe(":3000", nil)
 	//Router is passed in here instead of nil.
-	http.ListenAndServe(":3000", routerr)
+	http.ListenAndServe(":3000", router)
 }

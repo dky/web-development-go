@@ -17,8 +17,7 @@ var contactView *views.View
 
 
 func main() {
-	homeView = views.NewView("views/home.gohtml")
-	contactView = views.NewView("views/contact.gohtml")
+	homeView = views.NewView("bootstrap", "views/home.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)

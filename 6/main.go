@@ -35,7 +35,7 @@ func main() {
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	//homeTemplate.Execute(w, nil)
+	homeTemplate.Execute(w, nil)
 }
 
 func contact(w http.ResponseWriter, r *http.Request) {

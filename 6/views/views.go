@@ -3,7 +3,7 @@ package views
 import "html/template"
 
 //func NewView(files ...string) *View {
-func NewViews(layout string, files ...string) *View {
+func NewView(layout string, files ...string) *View {
 	files = append(files, 
 		"views/layouts/footer.gohtml",
 		"views/layouts/bootstrap.gohtml")

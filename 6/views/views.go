@@ -33,6 +33,7 @@ type View struct {
 	Layout string
 }
 
+//zero args, returns a slice of strings = files that match "/*.gohtml"
 func layoutFiles() []string {
 	files, err := filepath.Glob(LayoutDir + "/*.gohtml")
 	if err != nil {

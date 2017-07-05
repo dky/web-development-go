@@ -8,8 +8,8 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var homeView *views.View var contactView *views.View
-
+var homeView *views.View 
+var contactView *views.View
 
 func main() {
 	homeView = views.NewView("bootstrap", "views/home.gohtml")

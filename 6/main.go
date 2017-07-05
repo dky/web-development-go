@@ -10,14 +10,17 @@ import (
 
 var homeView *views.View 
 var contactView *views.View
+var faqsView *views.View
 
 func main() {
 	homeView = views.NewView("bootstrap", "views/home.gohtml")
 	contactView = views.NewView("bootstrap", "views/contact.gohtml")
+	faqsView = views.NewView("bootstrap", "views/faqs.gohtml")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
 	r.HandleFunc("/contact", contact)
+	r.HandleFunc("/faqs", faqs)
 	http.ListenAndServe(":3000", r)
 }
 
@@ -34,3 +37,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	contactView.Render(w, nil)
 }
 
+func faqs(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	faqsView.Render(w, nil)
+}
